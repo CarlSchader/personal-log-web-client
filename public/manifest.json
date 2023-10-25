@@ -1,0 +1,9 @@
+{
+  "name": "Personal Log",
+  "short_name": "Log",
+  "description": "Experimental logging app for note taking.",
+  "start_url": "/",
+  "permissions": [
+    "geolocation"
+  ]
+}
