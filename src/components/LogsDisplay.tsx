@@ -10,7 +10,7 @@ export default function LogsDisplay({ logs=[] }: { logs: Log[]}) {
   }, [logs]);
 
   return (
-    <div className="flex flex-col overflow-auto" id="log-list">
+    <div className="flex flex-col w-screen overflow-auto p-5" id="log-list">
       <ul className="mt-4 max-h-96">
         {logs.map((log, index) => (
           <li key={index} className="flex flex-row items-center align-center">
