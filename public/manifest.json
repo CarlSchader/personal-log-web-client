@@ -2,6 +2,7 @@
   "name": "Personal Log",
   "short_name": "Log",
   "description": "Experimental logging app for note taking.",
+  "display": "standalone",
   "start_url": "/",
   "permissions": [
     "geolocation"
