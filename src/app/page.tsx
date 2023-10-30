@@ -1,6 +1,7 @@
 import { Log } from '@/types';
 import LogsDisplay from '@/components/LogsDisplay';
 import LogInput from '@/components/LogInput';
+import InsightComponent from '@/components/InsightComponent';
 
 export default async function Home() {
   const resJson = await fetch(process.env.LOGS_API_URL + '/logs', { cache: 'no-store' }).then(res => res.json());
@@ -16,6 +17,7 @@ export default async function Home() {
       {/* log list display */}
       <LogsDisplay logs={logs} />
       <LogInput />
+      <InsightComponent />
     </main>
   )
 }
