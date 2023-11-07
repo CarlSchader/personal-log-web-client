@@ -2,16 +2,15 @@
 import { useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
-export default function InsightComponent() {
+export default function InsightComponent({ title, query }: { title: string, query: string }) {
   const [insight, setInsight] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function onPress() {
     setLoading(true);
-    const res = await fetch('/insight?q=How would you summarize?&max_new_tokens=512');
+    const res = await fetch(`/insight?q=${query}?&max_new_tokens=512`);
     const resJson = await res.json();
 
-    console.log(resJson.response.split('\n').map((str: string, index: number) => <p key={index}>{str}</p>))
     setInsight(resJson.response.split('\n').map((str: string, index: number) => <p key={index}>{str}</p>));
     setLoading(false);
   }
@@ -26,7 +25,7 @@ export default function InsightComponent() {
             type="button"
             onClick={onPress}
           >
-            Get Insight
+            {title}
           </button>
       }
       {insight && (

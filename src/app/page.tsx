@@ -17,7 +17,7 @@ export default async function Home() {
       {/* log list display */}
       <LogsDisplay logs={logs} />
       <LogInput />
-      <InsightComponent />
+      <InsightComponent title="Task list" query='Use this data to make a task list' />
     </main>
   )
 }

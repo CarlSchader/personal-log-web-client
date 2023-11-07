@@ -1,3 +1,6 @@
+run-dev:
+	npm run dev
+
 push-image:
 	gcloud auth configure-docker us-west1-docker.pkg.dev
 	docker build -t web-client --platform linux/amd64 .
